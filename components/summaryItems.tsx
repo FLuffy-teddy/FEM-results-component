@@ -1,16 +1,18 @@
 "use client";
 
 import Image from "next/image";
+import Scores from "../app/api/data.json";
 
 export default function Summary(props: any) {
-  const scores = props.scores;
+
+  console.log(Object.entries(Scores));
 
   return (
     <>
-      {scores.map((score:any) => {
-        <div key={score.id}>
+     {Object.entries(Scores).map((key, i) => {
+        <div key={i}>
           <Image
-            src={score.icon}
+            src={scores.icon}
             height={200}
             width={200}
             alt="Score category Image"

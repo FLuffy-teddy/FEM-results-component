@@ -1,3 +1,5 @@
+import Summary from '../components/summaryItems'
+
 export default function Home() {
   return (
     <main className="h-screen bg-slate-100 flex justify-center items-center">
@@ -15,6 +17,7 @@ export default function Home() {
         </div>
         <div className="rounded-xl flex flex-col shadow-2xl p-8">
           <h3 className="text-lg text-black pb-4">Summary</h3>
+          <Summary/>
           <div className="flex bg-red-100 p-4 my-2 justify-between">
             <div>
               <h4 className="text-md text-red-400">Reaction</h4>
