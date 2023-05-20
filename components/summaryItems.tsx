@@ -3,24 +3,31 @@
 import Image from "next/image";
 import Scores from "../app/api/data.json";
 
-export default function Summary(props: any) {
+export default function Summary() {
 
-  console.log(Object.entries(Scores));
+  interface scoreType {
+    category: string;
+    score: number;
+    icon: string;
+    id: number;
+  }
+
+  const typeScore : scoreType = Scores["scores"];
 
   return (
     <>
-     {Object.entries(Scores).map((key, i) => {
-        <div key={i}>
+     {Object.entries(typeScore).forEach((score) => {
+        <div key={score["id"]}>
           <Image
-            src={scores.icon}
+            src={score["icon"]}
             height={200}
             width={200}
             alt="Score category Image"
           />
 
-          <h2>{score.category}</h2>
+          <h2>{score["category"]}</h2>
           <h3>
-            {score.score}
+            {score["score"]}
             <span>/100</span>
           </h3>
         </div>;
