@@ -1,11 +1,10 @@
-"use client";
-
 import Image from "next/image";
 import Scores from "../app/api/data.json";
 
 interface ID {
   id: number;
-  color: string;
+  bgColor: string;
+  textColor: string;
 }
 interface TestID {
   id: number;
@@ -16,7 +15,7 @@ interface TestID {
 
 interface TestScore extends Array<TestID> {}
 
-export default function Summary({ id, color }: ID) {
+export default function Summary({ id, bgColor, textColor }: ID) {
   function filterById(jsonObject: TestScore, id: number) {
     return jsonObject.filter(function (jsonObject) {
       return jsonObject["id"] == id;
@@ -27,7 +26,7 @@ export default function Summary({ id, color }: ID) {
 
   return (
     <div
-      className={`flex bg-${color}-100 p-4 my-2 justify-between rounded-xl`}
+      className={`flex ${bgColor} p-4 my-2 justify-between rounded-xl`}
       key={selectedObject.id}
     >
       <div className="flex items-center">
@@ -38,7 +37,7 @@ export default function Summary({ id, color }: ID) {
           alt="Score category Image"
         />
 
-        <h4 className={`text-md text-${color}-600 pl-2`}>
+        <h4 className={`text-md ${textColor} pl-2`}>
           {selectedObject.category}
         </h4>
       </div>

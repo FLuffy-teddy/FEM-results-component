@@ -17,11 +17,11 @@ export default function Home() {
         </div>
         <div className="rounded-xl flex flex-col shadow-2xl px-8 py-4">
           <h3 className="text-lg text-black pb-4">Summary</h3>
-          <Summary id={1} color={'red'} />
-          <Summary id={2} color={'yellow'} />
-          <Summary id={3} color={'green'} />
-          <Summary id={4} color={'blue'} />
-          <button className="bg-gray-800 mt-2 rounded-full py-3">Continue</button>
+          <Summary id={1} bgColor={'bg-red-100'} textColor={'text-red-600'} />
+          <Summary id={2} bgColor={'bg-yellow-100'} textColor={'text-yellow-600'} />
+          <Summary id={3} bgColor={'bg-green-100'} textColor={'text-green-600'} />
+          <Summary id={4} bgColor={'bg-blue-100'} textColor={'text-blue-600'} />
+          <button className="bg-gray-800 hover:bg-indigo-700  mt-2 rounded-full py-3">Continue</button>
         </div>
       </div>
     </main>
